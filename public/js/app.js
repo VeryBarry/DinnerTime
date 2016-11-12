@@ -1,0 +1,1 @@
+console.error("Error: Cannot find module 'UserModel' from '/Users/williammccullough/TIY/assignments/DinnerTime/src-client/scripts'");
