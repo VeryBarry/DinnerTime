@@ -59,14 +59,8 @@ public class DinnerTimeRestController {
     public Iterable<Restaurant> getRestaurants(){
         return restaurants.findAll();
     }
-    @RequestMapping(path = "/edit-wait", method = RequestMethod.POST)
-    public String edit(Model model, int id) {
-        Restaurant r = restaurants.findOne(id);
-        model.addAttribute("restaurant", r);
-        return "edit";
-    }
 
-    @RequestMapping(path = "/edit-wait", method = RequestMethod.POST)
+    @RequestMapping(path = "/restaurants", method = RequestMethod.POST)
     public String editPost(int id, String rname, int rwaitTime, boolean rbarSeating, String rsubmitTime, Restaurant.Rating rrating, HttpSession session) throws Exception {
         Restaurant r = restaurants.findOne(id);
         r.restaurantName = rname;
