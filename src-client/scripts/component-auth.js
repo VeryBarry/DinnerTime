@@ -3,6 +3,11 @@ const React = require('react')
 const ACTIONS = require('./actions.js')
 
 const AuthView = React.createClass({
+  getInitialState: function() {
+      return {
+          items: []
+      };
+    },
    _handleUserAuth: function(evt){
       evt.preventDefault()
 
@@ -13,6 +18,9 @@ const AuthView = React.createClass({
 
       ACTIONS.authenticateUser(newUserData)
    },
+   _handleClick: function(){
+      window.location.hash = "home"
+   },
 
    render: function(){
       return (
@@ -22,7 +30,7 @@ const AuthView = React.createClass({
                <div className="name-container row text-center">
 
                   <div className="col-md-6">
-                      <h2><label>User </label></h2>
+                      <h2><label>User :</label></h2>
                   </div>
 
                   <div className="col-md-6">
@@ -34,7 +42,7 @@ const AuthView = React.createClass({
 
                <div className="password-container row text-center">
                   <div className="col-md-6">
-                     <h2><label>Password</label></h2>
+                     <h2><label>Password :</label></h2>
                   </div>
 
                   <div className="col-md-6">
@@ -44,7 +52,7 @@ const AuthView = React.createClass({
                </div>
 
                <div className="button-container text-center">
-                   <input type="submit" className="btn btn-primary" value="Login" / >
+                   <input type="submit" onClick={this._handleClick} className="btn btn-primary" value="Login" />
                </div>
 
             </div>

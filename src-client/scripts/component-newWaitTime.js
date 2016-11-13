@@ -3,6 +3,11 @@ const React = require('react')
 const ACTIONS = require('./actions.js')
 
 const NewWaitTimeView = React.createClass({
+  getInitialState: function() {
+      return {
+          add: []
+      };
+    },
    _handleWaitTimeSubmit: function(evt){
       evt.preventDefault()
 
@@ -10,12 +15,15 @@ const NewWaitTimeView = React.createClass({
          restaurantName: evt.target.restaurantName.value,
          waitTime: evt.target.waitTime.value,
          barSeating: evt.target.barSeating.value,
-         // ADD TIME 
+         // ADD TIME
          // submitTime: this._timeStamp,
          rating: evt.target.rating.value
       }
 
       ACTIONS.createNewWaitTime(newWaitTimeData)
+   },
+   _handleClick: function(){
+      window.location.hash = "home"
    },
 
    render: function(){
@@ -77,7 +85,9 @@ const NewWaitTimeView = React.createClass({
                </div>
 
                <div className="button-container text-center">
-                   <input type="submit" className="btn btn-primary" value="Submit" />
+                  {/* <form onSubmit={this._handleWaitTimeSubmit}> */}
+                     <input type="submit" onClick={this._handleClick} className="btn btn-primary" value="Submit" />
+                  {/* </form> */}
                </div>
 
             </div>
@@ -86,5 +96,7 @@ const NewWaitTimeView = React.createClass({
       )
    }
 })
+
+// ReactDOM.render(<HomeView/> ,document.querySelector('#app-container'))
 
 module.exports = NewWaitTimeView

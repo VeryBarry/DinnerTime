@@ -3,6 +3,11 @@ const React = require('react')
 const ACTIONS = require('./actions.js')
 
 const HomeView = React.createClass({
+  getInitialState: function() {
+      return {
+          restaurants: []
+      };
+    },
    componentWillMount: function(){
          ACTIONS.fetchWaitTimeCollection()
    },
@@ -16,7 +21,9 @@ const HomeView = React.createClass({
          <div className="home-container">
 
             <div className="header-container">
-               <h1>Restaurant Wait Times</h1>
+            <h1><ul>Dinner Time</ul></h1>
+
+               <h4>Restaurant Wait Times</h4>
             </div>
 
             <div className="content-holder">
