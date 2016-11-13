@@ -4,7 +4,7 @@ const STORE = {
    _data:  {
        currentViewSetting : '',
       //  todosList : new SomeCollection(),
-      currentWaitTimes : [],
+       currentWaitTimes : [],
     },
 
    setStore: function(storeProp, payload){

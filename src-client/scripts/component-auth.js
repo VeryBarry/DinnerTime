@@ -16,26 +16,39 @@ const AuthView = React.createClass({
 
    render: function(){
       return (
-         <div>
 
-            <form className="form-group grid-container" onSubmit={this._handleUserAuth}>
+            <div className="login-container" onSubmit={this._handleUserAuth}>
 
-               <div className="form-field sm-12-of-12 md-12-of-12">
-                   <h3><label>User </label></h3>
-                   <input type="text" name="name"/>
+               <div className="name-container row text-center">
+
+                  <div className="col-md-6">
+                      <h2><label>User </label></h2>
+                  </div>
+
+                  <div className="col-md-6">
+                      <input className="form-control" type="text" name="name"/>
+                  </div>
+
                </div>
 
-               <div className="form-field sm-12-of-12 md-12-of-12">
-                   <h3><label>Password </label></h3>
-                   <input type="password" name="password"/>
+
+               <div className="password-container row text-center">
+                  <div className="col-md-6">
+                     <h2><label>Password</label></h2>
+                  </div>
+
+                  <div className="col-md-6">
+                     <input className="form-control" type="password" name="password"/>
+                  </div>
+
                </div>
 
-               <div className="form-field sm-12-of-12 md-12-of-12 txt-center">
-                   <input type="submit" className="btn primary" value="+" / >
+               <div className="button-container text-center">
+                   <input type="submit" className="btn btn-primary" value="Login" / >
                </div>
 
-            </form>
-         </div>
+            </div>
+
       )
    }
 })

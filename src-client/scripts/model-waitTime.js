@@ -10,7 +10,7 @@ const WaitTimeModel = Backbone.Model.extend({
 
 const WaitTimeCollection = Backbone.Collection.extend({
    model: WaitTimeModel,
-   url: "/todos",
+   url: "/restaurants",
 
    initialize: function(){
 

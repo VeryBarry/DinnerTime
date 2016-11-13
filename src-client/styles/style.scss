@@ -6,8 +6,25 @@ body{
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-h1 {
-	font-size: 300px;
-	text-align: center;
-	color: fuchsia;
+
+
+.login-container {
+	background-color: grey;
+
+	width: 60%;
+	margin: auto;
+	padding-top: 50px;
+
+}
+
+.add-new {
+	position: absolute;
+	top: 50px;
+	right: 50px;
+}
+
+.newWaitTime-container {
+	width: 60%;
+	padding-top: 50px;
+	margin: auto;
 }

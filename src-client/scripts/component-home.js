@@ -3,28 +3,33 @@ const React = require('react')
 const ACTIONS = require('./actions.js')
 
 const HomeView = React.createClass({
+   componentWillMount: function(){
+         ACTIONS.fetchWaitTimeCollection()
+   },
+
+   _handleClick: function(){
+      window.location.hash = "add"
+   },
+
    render: function(){
       return (
-         <div>
+         <div className="home-container">
 
-            <form className="form-group grid-container" onSubmit={this._handleUserAuth}>
+            <div className="header-container">
+               <h1>Restaurant Wait Times</h1>
+            </div>
 
-               <div className="form-field sm-12-of-12 md-12-of-12">
-                   <h3><label>User </label></h3>
-                   <input type="text" name="name"/>
-               </div>
+            <div className="content-holder">
 
-               <div className="form-field sm-12-of-12 md-12-of-12">
-                   <h3><label>Password </label></h3>
-                   <input type="password" name="password"/>
-               </div>
+            </div>
 
-               <div className="form-field sm-12-of-12 md-12-of-12 txt-center">
-                   <input type="submit" className="btn primary" value="+" / >
-               </div>
+            <div className="add-new">
+               <div onClick={this._handleClick} className="btn btn-success">Add New Wait Time</div>
+            </div>
 
-            </form>
          </div>
+
+
       )
    }
 })

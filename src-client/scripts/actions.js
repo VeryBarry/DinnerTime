@@ -1,7 +1,8 @@
 const Backbone = require('backbone');
 
 const  UserModel  = require('./model-user.js')
-const { WaitTimeModel, WaitTimeCollection } = require('UserModel')
+const { WaitTimeModel, WaitTimeCollection } = require('./model-waitTime.js')
+const STORE = require('./store.js')
 
 const ACTIONS = {
    authenticateUser: function(userDataObj){
@@ -14,7 +15,7 @@ const ACTIONS = {
     // (Nullpointer exception)
     userMod.save().then(function(serverRes){
       console.log(serverRes)
-      window.location.hash = ""
+      window.location.hash = "home"
     })
    },
 
@@ -26,11 +27,12 @@ const ACTIONS = {
 
   },
 
-  createNewWaitTime: function(newPostData){
+  createNewWaitTime: function(newWaitTimeData){
+     console.log(newWaitTimeData)
      const waitTimeMod = new WaitTimeModel()
-     waitTimeMod.set(newTodoData)
+     waitTimeMod.set(newWaitTimeData)
      return waitTimeMod.save().then(function(){
-       window.location.hash = "waitTimes"
+       window.location.hash = "home"
      })
 
   },
