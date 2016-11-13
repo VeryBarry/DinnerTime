@@ -59,7 +59,7 @@ public class DinnerTimeRestController {
     public Iterable<Restaurant> getRestaurants(){
         return restaurants.findAll();
     }
-    @RequestMapping(path = "/edit-wait", method = RequestMethod.GET)
+    @RequestMapping(path = "/edit-wait", method = RequestMethod.POST)
     public String edit(Model model, int id) {
         Restaurant r = restaurants.findOne(id);
         model.addAttribute("restaurant", r);
