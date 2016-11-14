@@ -16,7 +16,7 @@ public class Restaurant {
     @GeneratedValue
     int id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     public String restaurantName;
 
     @Column(nullable = false)
