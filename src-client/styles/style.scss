@@ -19,7 +19,7 @@ body{
 .login-container {
 	// background-color: #859398;
 	background-image: url("http://chezsasha.com/wp-content/uploads/2016/01/Husk-Restaurant-Charleston-4-800x506.jpg");
-	width: 60%;
+	// width: 60%;
 	height: 60vh;
 	margin: auto;
 	padding-top: 50px;
@@ -42,10 +42,20 @@ body{
 }
 
 .newWaitTime-container {
-	width: 60%;
+	// width: 60%;
 	padding-top: 50px;
 	margin: auto;
 	color: red;
 	background-image: url("http://res.cloudinary.com/sagacity/image/upload/c_crop,h_946,w_1084,x_0,y_246/c_limit,w_1080/v1432919462/0615-great-escapes-charleston-king-street_iamtrl.jpg");
 	height: 90vh;
+}
+
+.home-container {
+
+	.waitTimeEl {
+		width: 70%;
+		border: 1px solid black;
+		margin-bottom: 10px;
+		margin: auto;
+	}
 }

@@ -24,11 +24,11 @@ const AppViewController = React.createClass({
   render: function(){
     switch(this.props.routedFrom){
       case "HomeView":
-         return <HomeView/>
+         return <HomeView currentWaitTimes={this.state.currentWaitTimes}/>
          break;
 
       case "NewWaitTimeView":
-         return <NewWaitTimeView currentTodos={this.state.currentWaitTimes} />
+         return <NewWaitTimeView currentWaitTimes={this.state.currentWaitTimes} />
          break;
 
       case "AuthView":

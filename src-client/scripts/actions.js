@@ -23,7 +23,7 @@ const ACTIONS = {
      const waitTimeColl = new WaitTimeCollection()
      waitTimeColl.fetch().then(function(){
         console.log(waitTimeColl)
-       STORE.setStore('currentWaitTimes', waitTimeColl.models )
+        STORE.setStore('currentWaitTimes', waitTimeColl.models )
      })
 
   },
