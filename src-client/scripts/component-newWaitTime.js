@@ -10,7 +10,6 @@ const NewWaitTimeView = React.createClass({
          restaurantName: evt.target.restaurantName.value,
          waitTime: evt.target.waitTime.value,
          barSeating: evt.target.barSeating.value,
-         // submitTime: ADD TIME STAMP,
          rating: evt.target.rating.value
       }
 
