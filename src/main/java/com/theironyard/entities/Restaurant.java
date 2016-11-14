@@ -46,6 +46,14 @@ public class Restaurant {
         this.user = user;
     }
 
+    public Restaurant(String restaurantName, int waitTime, boolean barSeating, String submitTime, Rating rating) {
+        this.restaurantName = restaurantName;
+        this.waitTime = waitTime;
+        this.barSeating = barSeating;
+        this.submitTime = submitTime;
+        this.rating = rating;
+    }
+
     public int getId() {
         return id;
     }

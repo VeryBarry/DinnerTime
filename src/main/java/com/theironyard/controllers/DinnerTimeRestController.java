@@ -61,13 +61,8 @@ public class DinnerTimeRestController {
     }
 
     @RequestMapping(path = "/restaurants", method = RequestMethod.POST)
-    public String editPost(int id, String rname, int rwaitTime, boolean rbarSeating, String rsubmitTime, Restaurant.Rating rrating, HttpSession session) throws Exception {
-        Restaurant r = restaurants.findOne(id);
-        r.restaurantName = rname;
-        r.waitTime = rwaitTime;
-        r.barSeating = rbarSeating;
-        r.submitTime = rsubmitTime;
-        r.rating = rrating;
+    public String editPost(HttpSession session, @RequestBody Restaurant restaurant) throws Exception {
+        Restaurant r = new Restaurant(restaurant.restaurantName, restaurant.waitTime, restaurant.barSeating, restaurant.submitTime, restaurant.rating);
         restaurants.save(r);
         return "redirect:/";
     }
