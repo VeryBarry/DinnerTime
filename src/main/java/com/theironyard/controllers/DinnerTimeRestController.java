@@ -61,13 +61,22 @@ public class DinnerTimeRestController {
     }
 
     @RequestMapping(path = "/restaurants", method = RequestMethod.POST)
-    public void editPost(HttpSession session, @RequestBody Restaurant restaurant) throws Exception {
+    public void addRestaurant(HttpSession session, @RequestBody Restaurant restaurant) throws Exception {
         String name = (String) session.getAttribute("name");
         User user = users.findFirstByName(name);
         Restaurant r = new Restaurant(restaurant.restaurantName, restaurant.waitTime, restaurant.barSeating, restaurant.submitTime, restaurant.rating, user);
         restaurants.save(r);
     }
-
+    @RequestMapping(path = "/delete-restaurants", method = RequestMethod.POST)
+    public ResponseEntity<Restaurant> deleteRestaurant(HttpSession session, @RequestBody Restaurant restaurant) {
+        String name = (String) session.getAttribute("name");
+        if (name == null) {
+            return new ResponseEntity<Restaurant>(HttpStatus.FORBIDDEN);
+        }
+        int id = restaurant.getId();
+        restaurants.delete(id);
+        return new ResponseEntity<Restaurant>(HttpStatus.OK);
+    }
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public ResponseEntity<User> postUser(HttpSession session, @RequestBody User user) throws PasswordStorage.InvalidHashException, PasswordStorage.CannotPerformOperationException {
         User userFromDb = users.findFirstByName(user.getName());
@@ -80,14 +89,8 @@ public class DinnerTimeRestController {
         session.setAttribute("name", user.getName());
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
-
     @RequestMapping(path = "/logout", method = RequestMethod.POST)
     public void logout(HttpSession session) {
         session.invalidate();
-    }
-
-    @RequestMapping(path = "/restaurants.json", method = RequestMethod.GET)
-    public Iterable<Restaurant> getJsonRestaurants(){
-        return restaurants.findAll();
     }
 }
