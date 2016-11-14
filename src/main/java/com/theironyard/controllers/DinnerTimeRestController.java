@@ -61,12 +61,11 @@ public class DinnerTimeRestController {
     }
 
     @RequestMapping(path = "/restaurants", method = RequestMethod.POST)
-    public String editPost(HttpSession session, @RequestBody Restaurant restaurant) throws Exception {
+    public void editPost(HttpSession session, @RequestBody Restaurant restaurant) throws Exception {
         String name = (String) session.getAttribute("name");
         User user = users.findFirstByName(name);
         Restaurant r = new Restaurant(restaurant.restaurantName, restaurant.waitTime, restaurant.barSeating, restaurant.submitTime, restaurant.rating, user);
         restaurants.save(r);
-        return "redirect:/";
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
@@ -83,9 +82,8 @@ public class DinnerTimeRestController {
     }
 
     @RequestMapping(path = "/logout", method = RequestMethod.POST)
-    public String logout(HttpSession session) {
+    public void logout(HttpSession session) {
         session.invalidate();
-        return "redirect:/";
     }
 
     @RequestMapping(path = "/restaurants.json", method = RequestMethod.GET)
