@@ -1,9 +1,9 @@
 const Backbone = require('backbone')
+const { WaitTimeModel, WaitTimeCollection } = require('./model-waitTime.js')
 
 const STORE = {
    _data:  {
        currentViewSetting : '',
-      //  todosList : new SomeCollection(),
        currentWaitTimes : [],
     },
 

@@ -3,11 +3,6 @@ const React = require('react')
 const ACTIONS = require('./actions.js')
 
 const NewWaitTimeView = React.createClass({
-  getInitialState: function() {
-      return {
-          add: []
-      };
-    },
    _handleWaitTimeSubmit: function(evt){
       evt.preventDefault()
 
@@ -34,9 +29,9 @@ const NewWaitTimeView = React.createClass({
                <h1>Add a Wait Time</h1>
             </div>
 
-            <div className="newWaitTime-container" onSubmit={this._handleWaitTimeSubmit}>
+            <form className="form-group newWaitTime-container" onSubmit={this._handleWaitTimeSubmit}>
 
-               <div className="row text-center">
+               <div className="form-field row text-center">
 
                   <div className="col-md-6">
                       <h2><label>Restaurant Name</label></h2>
@@ -48,7 +43,7 @@ const NewWaitTimeView = React.createClass({
 
                </div>
 
-               <div className="row text-center">
+               <div className="form-field row text-center">
 
                   <div className="col-md-6">
                       <h2><label>Wait Time in Minutes</label></h2>
@@ -60,7 +55,7 @@ const NewWaitTimeView = React.createClass({
 
                </div>
 
-               <div className="row text-center">
+               <div className="form-field row text-center">
 
                   <div className="col-md-6">
                       <h2><label>Bar Seating?</label></h2>
@@ -72,7 +67,7 @@ const NewWaitTimeView = React.createClass({
 
                </div>
 
-               <div className="row text-center">
+               <div className="form-field row text-center">
 
                   <div className="col-md-6">
                       <h2><label>Rating</label></h2>
@@ -84,19 +79,17 @@ const NewWaitTimeView = React.createClass({
 
                </div>
 
-               <div className="button-container text-center">
-                  {/* <form onSubmit={this._handleWaitTimeSubmit}> */}
-                     <input type="submit" onClick={this._handleClick} className="btn btn-primary" value="Submit" />
-                  {/* </form> */}
+
+               <div className="form-field button-container text-center">
+                   <input type="submit" className="btn btn-primary" value="Submit" />
                </div>
 
-            </div>
+            </form>
 
          </div>
       )
    }
 })
 
-// ReactDOM.render(<HomeView/> ,document.querySelector('#app-container'))
 
 module.exports = NewWaitTimeView

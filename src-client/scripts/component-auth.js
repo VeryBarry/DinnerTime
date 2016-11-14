@@ -25,37 +25,37 @@ const AuthView = React.createClass({
    render: function(){
       return (
 
-            <div className="login-container" onSubmit={this._handleUserAuth}>
+         <form className="form-group login-container" onSubmit={this._handleUserAuth}>
 
-               <div className="name-container row text-center">
+            <div className="form-field name-container row text-center">
 
-                  <div className="col-md-6">
-                      <h2><label>User :</label></h2>
-                  </div>
-
-                  <div className="col-md-6">
-                      <input className="form-control" type="text" name="name"/>
-                  </div>
-
+               <div className="col-md-6">
+                   <h2><label>User :</label></h2>
                </div>
 
-
-               <div className="password-container row text-center">
-                  <div className="col-md-6">
-                     <h2><label>Password :</label></h2>
-                  </div>
-
-                  <div className="col-md-6">
-                     <input className="form-control" type="password" name="password"/>
-                  </div>
-
-               </div>
-
-               <div className="button-container text-center">
-                   <input type="submit" onClick={this._handleClick} className="btn btn-primary" value="Login" />
+               <div className="col-md-6">
+                   <input type="text" name="name"/>
                </div>
 
             </div>
+
+
+            <div className="form-field password-container row text-center">
+               <div className="col-md-6">
+                  <h2><label>Password :</label></h2>
+               </div>
+
+               <div className="col-md-6">
+                  <input type="password" name="password"/>
+               </div>
+
+            </div>
+
+            <div className="button-container text-center">
+                <input type="submit" onClick={this._handleClick} className="btn btn-primary" value="Login" />
+            </div>
+
+         </form>
 
       )
    }

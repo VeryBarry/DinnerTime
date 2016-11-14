@@ -22,6 +22,7 @@ const ACTIONS = {
   fetchWaitTimeCollection: function(queryObj){
      const waitTimeColl = new WaitTimeCollection()
      waitTimeColl.fetch().then(function(){
+        console.log(waitTimeColl)
        STORE.setStore('currentWaitTimes', waitTimeColl.models )
      })
 

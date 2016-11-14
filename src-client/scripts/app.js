@@ -2,9 +2,11 @@ const ReactDOM = require('react-dom');
 const React = require('react');
 const Backbone = require('backbone');
 
-const AuthView = require('./component-auth.js')
-const HomeView = require('./component-home.js')
-const NewWaitTimeView = require('./component-newWaitTime.js')
+// const AuthView = require('./component-auth.js')
+// const HomeView = require('./component-home.js')
+// const NewWaitTimeView = require('./component-newWaitTime.js')
+
+const AppViewController = require('./component-viewcontroller.js')
 
 const AppRouter = Backbone.Router.extend({
   routes: {
@@ -15,15 +17,15 @@ const AppRouter = Backbone.Router.extend({
   },
 
   renderHomeView: function(){
-     ReactDOM.render(<HomeView/> ,document.querySelector('#app-container'))
+     ReactDOM.render(<AppViewController routedFrom="HomeView"/> ,document.querySelector('#app-container'))
   },
 
   renderAuthView: function(){
-     ReactDOM.render(<AuthView/>, document.querySelector('#app-container'))
+     ReactDOM.render(<AppViewController routedFrom="AuthView"/>, document.querySelector('#app-container'))
   },
 
   renderNewWaitTimeView: function(){
-     ReactDOM.render(<NewWaitTimeView/>, document.querySelector('#app-container'))
+     ReactDOM.render(<AppViewController routedFrom="NewWaitTimeView"/>, document.querySelector('#app-container'))
   },
 
   initialize: function(){

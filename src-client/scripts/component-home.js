@@ -3,11 +3,6 @@ const React = require('react')
 const ACTIONS = require('./actions.js')
 
 const HomeView = React.createClass({
-  getInitialState: function() {
-      return {
-          restaurants: []
-      };
-    },
    componentWillMount: function(){
          ACTIONS.fetchWaitTimeCollection()
    },
