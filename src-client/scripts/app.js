@@ -10,9 +10,10 @@ const AppViewController = require('./component-viewcontroller.js')
 
 const AppRouter = Backbone.Router.extend({
   routes: {
-    "" : "renderAuthView",
     "home" : "renderHomeView",
-    "add" : "renderNewWaitTimeView"
+    "add" : "renderNewWaitTimeView",
+    "" : "renderAuthView",
+
 
   },
 

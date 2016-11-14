@@ -8,7 +8,8 @@ const AuthView = React.createClass({
           items: []
       };
     },
-   _handleUserAuth: function(evt){
+
+  _handleUserAuth: function(evt){
       evt.preventDefault()
 
       let newUserData = {

@@ -13,7 +13,7 @@ const AppViewController = React.createClass({
     return startingState
   },
 
- componentWillMount: function(){
+  componentWillMount: function(){
     let self = this
     STORE.onChange(function(){
         let updateState = STORE.getStoreData()
