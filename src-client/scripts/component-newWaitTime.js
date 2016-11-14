@@ -34,7 +34,7 @@ const NewWaitTimeView = React.createClass({
                <div className="form-field row text-center">
 
                   <div className="col-md-6">
-                      <h2><label>Restaurant Name</label></h2>
+                      <h2><label>Restaurant Name:</label></h2>
                   </div>
 
                   <div className="col-md-6">
@@ -46,7 +46,7 @@ const NewWaitTimeView = React.createClass({
                <div className="form-field row text-center">
 
                   <div className="col-md-6">
-                      <h2><label>Wait Time in Minutes</label></h2>
+                      <h2><label>Wait Time in Minutes:</label></h2>
                   </div>
 
                   <div className="col-md-6">
@@ -70,7 +70,7 @@ const NewWaitTimeView = React.createClass({
                <div className="form-field row text-center">
 
                   <div className="col-md-6">
-                      <h2><label>Rating</label></h2>
+                      <h2><label>Rating:</label></h2>
                   </div>
 
                   <div className="col-md-6">
@@ -79,9 +79,9 @@ const NewWaitTimeView = React.createClass({
 
                </div>
 
+               <div className="button-container text-center">
+                     <input type="submit" onClick={this._handleClick} className="btn btn-primary" value="Submit" />
 
-               <div className="form-field button-container text-center">
-                   <input type="submit" className="btn btn-primary" value="Submit" />
                </div>
 
             </form>

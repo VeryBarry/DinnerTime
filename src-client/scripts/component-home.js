@@ -16,9 +16,9 @@ const HomeView = React.createClass({
          <div className="home-container">
 
             <div className="header-container">
-            <h1><ul>Dinner Time</ul></h1>
+            <h1><ul>Dinner Time™</ul></h1>
 
-               <h4>Restaurant Wait Times</h4>
+               <h3>Restaurant Wait Times</h3>
             </div>
 
             <div className="content-holder">
