@@ -11,8 +11,6 @@ const ACTIONS = {
      userMod.set(userDataObj)
      console.log(userMod)
 
-    //FIX THE /users post route
-    // (Nullpointer exception)
     userMod.save().then(function(serverRes){
       console.log(serverRes)
       window.location.hash = "home"

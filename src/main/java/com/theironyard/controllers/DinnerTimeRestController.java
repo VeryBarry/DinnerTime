@@ -40,13 +40,13 @@ public class DinnerTimeRestController {
             User user = new User("Barton", PasswordStorage.createHash("1234"));
             users.save(user);
 
-            restaurants.save(new Restaurant("Moes", 30, false, "8:30pm", Restaurant.Rating.ONE, user));
-            restaurants.save(new Restaurant("Fish", 30, false, "8:30pm", Restaurant.Rating.TWO, user));
-            restaurants.save(new Restaurant("Hall's Chophouse",30, false, "8:30pm",  Restaurant.Rating.THREE, user));
-            restaurants.save(new Restaurant("Juanita Greenbergs", 30, false, "8:30pm", Restaurant.Rating.FOUR, user));
-            restaurants.save(new Restaurant("82 Queen", 30, false, "8:30pm", Restaurant.Rating.FIVE, user));
-            restaurants.save(new Restaurant("Husk", 30, false, "8:30pm", Restaurant.Rating.FOUR, user));
-            restaurants.save(new Restaurant("Fig", 30, false, "8:30pm", Restaurant.Rating.THREE, user));
+            restaurants.save(new Restaurant("Moes", 30, "false", Restaurant.Rating.ONE, user));
+            restaurants.save(new Restaurant("Fish", 30, "false", Restaurant.Rating.TWO, user));
+            restaurants.save(new Restaurant("Hall's Chophouse",30, "false",  Restaurant.Rating.THREE, user));
+            restaurants.save(new Restaurant("Juanita Greenbergs", 30, "false", Restaurant.Rating.FOUR, user));
+            restaurants.save(new Restaurant("82 Queen", 30, "false", Restaurant.Rating.FIVE, user));
+            restaurants.save(new Restaurant("Husk", 30, "false", Restaurant.Rating.FOUR, user));
+            restaurants.save(new Restaurant("Fig", 30, "false", Restaurant.Rating.THREE, user));
         }
     }
 
@@ -64,7 +64,7 @@ public class DinnerTimeRestController {
     public void addRestaurant(HttpSession session, @RequestBody Restaurant restaurant) throws Exception {
         String name = (String) session.getAttribute("name");
         User user = users.findFirstByName(name);
-        Restaurant r = new Restaurant(restaurant.restaurantName, restaurant.waitTime, restaurant.barSeating, restaurant.submitTime, restaurant.rating, user);
+        Restaurant r = new Restaurant(restaurant.restaurantName, restaurant.waitTime, restaurant.barSeating, restaurant.rating, user);
         restaurants.save(r);
     }
     @RequestMapping(path = "/delete-restaurants", method = RequestMethod.POST)

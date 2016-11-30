@@ -23,10 +23,8 @@ public class Restaurant {
     public int waitTime;
 
     @Column(nullable = false)
-    public boolean barSeating;
+    public String barSeating;
 
-    @Column(nullable = false)
-    public String submitTime;
 
     @Column(nullable = false)
     public Rating rating;
@@ -37,15 +35,20 @@ public class Restaurant {
     public Restaurant() {
     }
 
-    public Restaurant(String restaurantName, int waitTime, boolean barSeating, String submitTime, Rating rating, User user) {
+    public Restaurant(String restaurantName, int waitTime, String barSeating, Rating rating) {
         this.restaurantName = restaurantName;
         this.waitTime = waitTime;
         this.barSeating = barSeating;
-        this.submitTime = submitTime;
+        this.rating = rating;
+    }
+
+    public Restaurant(String restaurantName, int waitTime, String barSeating, Rating rating, User user) {
+        this.restaurantName = restaurantName;
+        this.waitTime = waitTime;
+        this.barSeating = barSeating;
         this.rating = rating;
         this.user = user;
     }
-
 
     public int getId() {
         return id;
@@ -71,20 +74,12 @@ public class Restaurant {
         this.waitTime = waitTime;
     }
 
-    public boolean isBarSeating() {
+    public String getBarSeating() {
         return barSeating;
     }
 
-    public void setBarSeating(boolean barSeating) {
+    public void setBarSeating(String barSeating) {
         this.barSeating = barSeating;
-    }
-
-    public String getSubmitTime() {
-        return submitTime;
-    }
-
-    public void setSubmitTime(String submitTime) {
-        this.submitTime = submitTime;
     }
 
     public Rating getRating() {
